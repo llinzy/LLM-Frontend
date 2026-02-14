@@ -78,36 +78,37 @@ function App() {
 
   return (
     <div className="container">
-      <h2 className="title">AI Assistant</h2>
+  <h2 className="title">Hello, I'm KeeKee!</h2>
 
-      <div className="chat-box">
-        {messages.map((msg, i) => (
-          <div
-            key={i}
-            className={`message ${msg.role === "user" ? "user" : "assistant"}`}
-          >
-            {msg.text}
-          </div>
-        ))}
-
-        {isStreaming && <div className="loading">Assistant is typing…</div>}
-
-        <div ref={chatEndRef} />
+  <div className="chat-box">
+    {messages.map((msg, i) => (
+      <div
+        key={i}
+        className={`message ${msg.role === "user" ? "user" : "assistant"}`}
+      >
+        {msg.text}
       </div>
+    ))}
 
-      <div className="input-row">
-        <input
-          className="input"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={handleKeyPress}
-          placeholder="Type your message…"
-        />
-        <button className="send-btn" onClick={sendMessage} disabled={isStreaming}>
-          Send
-        </button>
-      </div>
-    </div>
+    {isStreaming && <div className="loading">Assistant is typing…</div>}
+
+    <div ref={chatEndRef} />
+  </div>
+
+  <div className="input-row">
+    <input
+      className="input"
+      value={input}
+      onChange={(e) => setInput(e.target.value)}
+      onKeyDown={handleKeyPress}
+      placeholder="Type your message…"
+    />
+    <button className="send-btn" onClick={sendMessage} disabled={isStreaming}>
+      Send
+    </button>
+  </div>
+</div>
+
   );
 }
 
