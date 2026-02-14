@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./App.css";
 
-const API_URL = "https://llm-chatbot-uplx.onrender.com"; 
+const API_URL = "https://llm-chatbot-uplx.onrender.com/reply"; 
 
 function App() {
   const [messages, setMessages] = useState([]);
