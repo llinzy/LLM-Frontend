@@ -42,6 +42,7 @@ function App() {
 
       let done = false;
       let accumulated = "";
+/* eslint-disable no-loop-func */
 
       while (!done) {
         const { value, done: streamDone } = await reader.read();
